@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">OnlineShopping</string>
+
+    <array name="group">
+        <item>Electrical</item>
+        <item>Machine</item>
+        <item>Furniture</item>
+        <item>Food</item>
+        <item>Clothing</item>
+    </array>
+</resources>

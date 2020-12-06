@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center"
+    android:padding="20dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add new product"
+        android:textColor="@color/purple_500"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/textfield_style"
+        android:textColor="@color/black"
+        android:lines="1"
+        android:textColorHint="#a8a8a8"
+        android:inputType="text"
+        android:hint="Product name"
+        android:paddingLeft="4dp"
+        android:textSize="14dp" />
+
+    <EditText
+        android:id="@+id/kind"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/textfield_style"
+        android:textColor="@color/black"
+        android:lines="1"
+        android:textColorHint="#a8a8a8"
+        android:inputType="text"
+        android:hint="Product kind"
+        android:paddingLeft="4dp"
+        android:textSize="14dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select group:"
+            android:textSize="18dp"
+            android:layout_marginBottom="4dp"
+            android:textColor="@color/black"/>
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spin"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/purple_700"
+            android:background="@drawable/textfield_style"
+            android:entries="@array/group"
+            />
+
+    </LinearLayout>
+
+
+
+    <EditText
+        android:id="@+id/price"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/textfield_style"
+        android:textColor="@color/black"
+        android:lines="1"
+        android:textColorHint="#a8a8a8"
+        android:inputType="number"
+        android:hint="Price"
+        android:paddingLeft="4dp"
+        android:textSize="14dp" />
+
+</LinearLayout>
