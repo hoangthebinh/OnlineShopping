@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".OrderDetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_500">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ORDER DETAIL"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#ff0000"
+                android:text="CANCEL"
+                android:textColor="@color/white"
+                android:layout_marginRight="15dp"/>
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order number: "
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="From user: "
+            android:textColor="@color/black"
+            android:layout_marginBottom="4dp"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/method"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment method: "
+            android:textColor="@color/black"
+            android:layout_marginBottom="4dp"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirmed by: "
+            android:textColor="@color/black"
+            android:layout_marginBottom="4dp"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/shipper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delivery by: "
+            android:textColor="@color/black"
+            android:layout_marginBottom="4dp"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order condition: "
+            android:textColor="@color/black"
+            android:layout_marginBottom="4dp"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/payment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment condition: "
+            android:textColor="@color/black"
+            android:layout_marginBottom="4dp"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total price: "
+            android:textColor="@color/black"
+            android:layout_marginBottom="4dp"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Products ordered: "
+            android:textColor="@color/black"
+            android:layout_marginBottom="4dp"
+            android:textSize="18dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"/>
+
+    </LinearLayout>
+
+<!--    queryData("CREATE TABLE IF NOT EXISTS Orders(" +-->
+<!--    "id INTEGER PRIMARY KEY AUTOINCREMENT," +-->
+<!--    " price INTEGER," +-->
+<!--    " paymentMethod VARCHAR(255)," +-->
+<!--    " customerId INTEGER," +-->
+<!--    " shipperId INTEGER," +-->
+<!--    " adminId INTEGER," +-->
+<!--    " products VARCHAR(255)," +-->
+<!--    " isPending INTEGER," +-->
+<!--    " isPaid INTEGER)");-->
+
+
+
+</LinearLayout>

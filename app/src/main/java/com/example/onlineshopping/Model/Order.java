@@ -2,24 +2,40 @@ package com.example.onlineshopping.Model;
 
 import com.example.onlineshopping.Model.Enum.PaymentMethod;
 
-public class Order {
+import java.io.Serializable;
+
+public class Order implements Serializable {
+    private int id;
     private int price;
     private PaymentMethod method;
     private int customerId;
     private int shipperId;
     private int adminId;
-    private int cartId;
-    private int isPending;
-    private int isPaid;
+    private String products;
+    private boolean isPending;
+    private boolean isPaid;
 
-    public Order(int price, PaymentMethod method, int customerId, int shipperId, int adminId, int isPending, int isPaid) {
+    public Order() {
+    }
+
+    public Order(int id, int price, PaymentMethod method, int customerId, int shipperId, int adminId, String products, boolean isPending, boolean isPaid) {
+        this.id = id;
         this.price = price;
         this.method = method;
         this.customerId = customerId;
         this.shipperId = shipperId;
         this.adminId = adminId;
+        this.products = products;
         this.isPending = isPending;
         this.isPaid = isPaid;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getPrice() {
@@ -62,19 +78,27 @@ public class Order {
         this.adminId = adminId;
     }
 
-    public int getIsPending() {
+    public String getProducts() {
+        return products;
+    }
+
+    public void setProducts(String products) {
+        this.products = products;
+    }
+
+    public boolean isPending() {
         return isPending;
     }
 
-    public void setIsPending(int isPending) {
-        this.isPending = isPending;
+    public void setPending(boolean pending) {
+        isPending = pending;
     }
 
-    public int getIsPaid() {
+    public boolean isPaid() {
         return isPaid;
     }
 
-    public void setIsPaid(int isPaid) {
-        this.isPaid = isPaid;
+    public void setPaid(boolean paid) {
+        isPaid = paid;
     }
 }

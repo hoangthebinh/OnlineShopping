@@ -64,9 +64,23 @@
             android:layout_gravity="center"
             android:background="@color/purple_500"
             android:backgroundTint="@color/purple_500"
+            android:layout_marginBottom="30dp"
             android:text="login"
             android:textColor="@color/white"
             android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register new account"
+            android:textColor="@color/purple_500"
+            android:layout_gravity="center"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
     </LinearLayout>
 

@@ -1,6 +1,7 @@
 package com.example.onlineshopping.Adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.onlineshopping.Model.Interfaces.ProductSelected;
 import com.example.onlineshopping.Model.Product;
 import com.example.onlineshopping.R;
 
@@ -21,6 +23,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     ArrayList<Product> products;
     Context context;
+    ProductSelected productSelected;
+
+    public ProductAdapter(ArrayList<Product> products, Context context, ProductSelected productSelected) {
+        this.products = products;
+        this.context = context;
+        this.productSelected = productSelected;
+    }
 
     public ProductAdapter(ArrayList<Product> products, Context context) {
         this.products = products;
@@ -58,7 +67,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             holder.image.setImageResource(R.drawable.clothing);
 
         holder.price.setText("" + products.get(position).getPrice());
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (productSelected != null)
+                    productSelected.didTapProduct(products.get(position));
+            }
+        });
     }
 
     @Override

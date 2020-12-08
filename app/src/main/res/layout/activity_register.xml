@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".RegisterActivity">
 
     <TextView
@@ -34,8 +35,10 @@
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginBottom="20dp"
+            android:textColor="@color/black"
             android:background="@drawable/textfield_style"
             android:hint="Name"
+            android:textColorHint="#a8a8a8"
             android:paddingLeft="4dp"
             android:textSize="14dp" />
 
@@ -44,8 +47,10 @@
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginBottom="20dp"
+            android:textColor="@color/black"
             android:background="@drawable/textfield_style"
             android:hint="Username"
+            android:textColorHint="#a8a8a8"
             android:paddingLeft="4dp"
             android:textSize="14dp" />
 
@@ -54,7 +59,9 @@
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginBottom="20dp"
+            android:textColor="@color/black"
             android:background="@drawable/textfield_style"
+            android:textColorHint="#a8a8a8"
             android:hint="Password"
             android:paddingLeft="4dp"
             android:textSize="14dp" />
@@ -64,7 +71,9 @@
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginBottom="20dp"
+            android:textColor="@color/black"
             android:background="@drawable/textfield_style"
+            android:textColorHint="#a8a8a8"
             android:hint="Phone number"
             android:paddingLeft="4dp"
             android:textSize="14dp" />
@@ -75,16 +84,20 @@
             android:layout_height="40dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/textfield_style"
+            android:textColor="@color/black"
+            android:textColorHint="#a8a8a8"
             android:hint="Address"
             android:paddingLeft="4dp"
             android:textSize="14dp" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/register"
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:text="Register"
+            android:background="@color/purple_500"
+            android:backgroundTint="@color/purple_500"
+            android:text="register"
             android:textColor="@color/white"
             android:textSize="14dp" />
 

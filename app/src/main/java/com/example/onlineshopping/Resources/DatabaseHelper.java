@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -67,13 +68,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 " vehicleNumber VARCHAR(255)," +
                 " vehicleType VARCHAR(255)," +
                 " completedShipment INTEGER)");
-//
-//        queryData("CREATE TABLE IF NOT EXISTS Customer(" +
-//                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-//                " name VARCHAR(255) NOT NULL," +
-//                " address VARCHAR(255)," +
-//                " phoneNumber INTEGER)");
-//
+
+        queryData("CREATE TABLE IF NOT EXISTS Customer(" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                " name VARCHAR(255) NOT NULL," +
+                " address VARCHAR(255)," +
+                " phoneNumber INTEGER)");
+
         queryData("CREATE TABLE IF NOT EXISTS Product(" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 " name VARCHAR(255) NOT NULL," +
@@ -81,27 +82,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 " fromGroup VARCHAR(255)," +
                 " price INTEGER)");
 
-//        queryData("CREATE TABLE IF NOT EXISTS Order(" +
-//                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-//                " price VARCHAR(255) NOT NULL," +
-//                " method VARCHAR(255) NOT NULL," +
-//                " customerId INTEGER," +
-//                " adminId INTEGER," +
-//                " cartId INTEGER," +
-//                " isPending INTEGER," +
-//                " isPaid INTEGER)");
-//
-//        queryData("CREATE TABLE IF NOT EXISTS Cart(" +
-//                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-//                " products TEXT)");
+        queryData("CREATE TABLE IF NOT EXISTS Orders(" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                " price INTEGER," +
+                " paymentMethod VARCHAR(255)," +
+                " customerId INTEGER," +
+                " shipperId INTEGER," +
+                " adminId INTEGER," +
+                " products VARCHAR(255)," +
+                " isPending INTEGER," +
+                " isPaid INTEGER)");
 
         //TODO: Insert Chapter data
         queryData("INSERT INTO Account VALUES(1, 'admin', 'admin1', 'admin1')");
         queryData("INSERT INTO Account VALUES(1, 'shipper', 'shipper1', 'shipper1')");
+
 //
         queryData("INSERT INTO Admin VALUES(1, 'Hoàng Thế Bình', 'Kiểm đơn', 'Quản lý', 8000000, 0, 0)");
         queryData("INSERT INTO Shipper VALUES(1, 'Lê Minh Hiếu', 'Giao hàng', 'Vận chuyển', 5000000, '29-D2-09900', 'Wave trắng 2017', 0)");
-
+        queryData("INSERT INTO Customer VALUES(null, 'binh', 'jsis', 090)");
 
 
         //TODO: Stop creating data

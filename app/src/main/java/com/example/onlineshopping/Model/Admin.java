@@ -43,9 +43,14 @@ public class Admin extends Employee {
         AccountManager.getInstance().getDatabase().queryData("INSERT INTO Product VALUES(null, '"+ name +"', '"+ kind +"', '"+ group +"', " + price + ")");
     }
 
-    public void deleteProduct() {};
-    public void modifyProduct() {};
+    public void deleteProduct(Product product) {
+        AccountManager.getInstance().getDatabase().queryData("DELETE FROM Product WHERE id = " + product.getId());
+    }
+
+    public void modifyProduct(Product product) {
+        AccountManager.getInstance().getDatabase().queryData("UPDATE Product SET name = '"+product.getName()+"', kind = '"+product.getKind()+"', fromGroup = '"+product.getGroup()+"', price = "+product.getPrice()+" WHERE id = " + product.getId());
+    }
+
     public void makeShipment() {};
     public void confirmOrder() {};
-    public void confirmPurchase() {};
 }

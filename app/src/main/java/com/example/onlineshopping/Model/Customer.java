@@ -2,6 +2,7 @@ package com.example.onlineshopping.Model;
 
 import com.example.onlineshopping.Model.Enum.AccountType;
 import com.example.onlineshopping.Model.Interfaces.AccountAuthorized;
+import com.example.onlineshopping.Resources.AccountManager;
 
 import java.util.ArrayList;
 
@@ -27,6 +28,23 @@ public class Customer extends Account {
         this.cart = cart;
     }
 
+    public Customer(int id, AccountType type, String name, String username, String password, String address, String phoneNumber) {
+        super(id, type, name, username, password);
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public Customer() {
+    }
+
+    public ArrayList<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(ArrayList<Order> orders) {
+        this.orders = orders;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -43,10 +61,13 @@ public class Customer extends Account {
         this.phoneNumber = phoneNumber;
     }
 
-    public void register() {};
-    public void makeOrder() {};
-    public void addToCart() {};
-    public void deleteFromCart() {};
-    public void makePayment() {};
+    public void makeOrder(int total, int customerId, String method, String products) {
+        AccountManager.getInstance().getDatabase().queryData("INSERT INTO Orders VALUES(null, "+ total +", '"+ method +"', "+ customerId +", 0, 0, '" + products + "', 1, 0)");
+
+    }
+
+    public void cancelOrder(int id) {
+        AccountManager.getInstance().getDatabase().queryData("DELETE FROM Orders WHERE id = " + id);
+    }
 
 }

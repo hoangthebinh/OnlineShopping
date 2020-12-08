@@ -8,8 +8,6 @@ public class Shipper extends Employee {
     private String vehicleType;
     private int completedShipment;
 
-    public void confirmPayment() {};
-
     public String getVehicleNumber() {
         return vehicleNumber;
     }
